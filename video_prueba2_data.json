@@ -1,0 +1,832 @@
+[
+    {
+        "id": 1,
+        "start": 0.0,
+        "end": 4.0,
+        "duration": 4.0,
+        "speaker": "UNKNOWN",
+        "original_text": "みなさんこんにちは、うまがいもなです。",
+        "translated_text": "Hola a todos, soy Umagai Moja.",
+        "audio_file": null
+    },
+    {
+        "id": 2,
+        "start": 4.0,
+        "end": 8.0,
+        "duration": 4.0,
+        "speaker": "UNKNOWN",
+        "original_text": "イージーとカニーズは仙台からお送りします。",
+        "translated_text": "Easy y Canies serán enviados desde Sendai.",
+        "audio_file": null
+    },
+    {
+        "id": 3,
+        "start": 8.0,
+        "end": 12.0,
+        "duration": 4.0,
+        "speaker": "SPEAKER_04",
+        "original_text": "今日は街の人たちに日本についてどう思っているか聞いてみたいと思います。",
+        "translated_text": "Hoy me gustaría preguntar a la gente de la ciudad qué opinan sobre Japón.",
+        "audio_file": null
+    },
+    {
+        "id": 4,
+        "start": 12.0,
+        "end": 30.62,
+        "duration": 18.62,
+        "speaker": "UNKNOWN",
+        "original_text": "今日ですね、日本について日本のいいところについて",
+        "translated_text": "Hoy, hablaremos sobre Japón y sobre sus aspectos positivos.",
+        "audio_file": null
+    },
+    {
+        "id": 5,
+        "start": 30.62,
+        "end": 32.62,
+        "duration": 2.0,
+        "speaker": "UNKNOWN",
+        "original_text": "はい、お聞きしてるんですけど",
+        "translated_text": "Sí, lo estoy escuchando.",
+        "audio_file": null
+    },
+    {
+        "id": 6,
+        "start": 32.62,
+        "end": 34.62,
+        "duration": 2.0,
+        "speaker": "UNKNOWN",
+        "original_text": "日本のいいところ?",
+        "translated_text": "¿Qué cosas bonitas tiene Japón?",
+        "audio_file": null
+    },
+    {
+        "id": 7,
+        "start": 34.62,
+        "end": 37.62,
+        "duration": 3.0,
+        "speaker": "UNKNOWN",
+        "original_text": "はい、思う、あの日本のいいところ",
+        "translated_text": "Sí, creo que esa es una de las cosas buenas de Japón.",
+        "audio_file": null
+    },
+    {
+        "id": 8,
+        "start": 37.62,
+        "end": 43.62,
+        "duration": 6.0,
+        "speaker": "UNKNOWN",
+        "original_text": "魚だったらやっぱりね、日本は一番新鮮な魚がすぐ海の周りが海なんで",
+        "translated_text": "Si se trata de pescado, claro que Japón es el lugar donde se pueden encontrar los peces más frescos, ya que está rodeado por mares.",
+        "audio_file": null
+    },
+    {
+        "id": 9,
+        "start": 43.62,
+        "end": 47.62,
+        "duration": 4.0,
+        "speaker": "UNKNOWN",
+        "original_text": "新鮮な魚いつでも海が海別の一番いいところですね。",
+        "translated_text": "El pescado fresco siempre se encuentra en las mejores zonas del mar.",
+        "audio_file": null
+    },
+    {
+        "id": 10,
+        "start": 47.62,
+        "end": 51.62,
+        "duration": 4.0,
+        "speaker": "UNKNOWN",
+        "original_text": "日本は食べ物が美味しいですね。",
+        "translated_text": "La comida en Japón es realmente deliciosa.",
+        "audio_file": null
+    },
+    {
+        "id": 11,
+        "start": 51.62,
+        "end": 56.62,
+        "duration": 5.0,
+        "speaker": "SPEAKER_04",
+        "original_text": "姉さんもやっぱり日本で一番好きな食べ物はお米?",
+        "translated_text": "¿También para mi hermana el arroz es el alimento que más le gusta en Japón?",
+        "audio_file": null
+    },
+    {
+        "id": 12,
+        "start": 56.62,
+        "end": 58.62,
+        "duration": 2.0,
+        "speaker": "SPEAKER_04",
+        "original_text": "はい、お米ですね。",
+        "translated_text": "Sí, se trata de arroz.",
+        "audio_file": null
+    },
+    {
+        "id": 13,
+        "start": 58.62,
+        "end": 61.62,
+        "duration": 3.0,
+        "speaker": "SPEAKER_04",
+        "original_text": "食べ物はこのからやっぱり和食か。",
+        "translated_text": "Bueno, después de todo, la comida sigue siendo japonesa.",
+        "audio_file": null
+    },
+    {
+        "id": 14,
+        "start": 61.62,
+        "end": 63.62,
+        "duration": 2.0,
+        "speaker": "SPEAKER_04",
+        "original_text": "今ね、なんか健康的に、",
+        "translated_text": "Ahora mismo, de alguna manera, de forma saludable…",
+        "audio_file": null
+    },
+    {
+        "id": 15,
+        "start": 63.62,
+        "end": 67.62,
+        "duration": 4.0,
+        "speaker": "UNKNOWN",
+        "original_text": "なんか世界的に注目されてますもんね。",
+        "translated_text": "De alguna manera, está recibiendo mucha atención a nivel mundial, ¿verdad?",
+        "audio_file": null
+    },
+    {
+        "id": 16,
+        "start": 67.62,
+        "end": 71.62,
+        "duration": 4.0,
+        "speaker": "UNKNOWN",
+        "original_text": "そうですね、お味噌汁とかやっぱりも使ってますね。",
+        "translated_text": "Sí, de hecho también se utiliza sopa de miso.",
+        "audio_file": null
+    },
+    {
+        "id": 17,
+        "start": 71.62,
+        "end": 74.62,
+        "duration": 3.0,
+        "speaker": "UNKNOWN",
+        "original_text": "確かに。こんにちは。",
+        "translated_text": "Ciertamente. Hola.",
+        "audio_file": null
+    },
+    {
+        "id": 18,
+        "start": 74.62,
+        "end": 78.62,
+        "duration": 4.0,
+        "speaker": "SPEAKER_04",
+        "original_text": "今日ですね、日本のいいところについてお聞きしたいんですけど",
+        "translated_text": "Hoy, me gustaría preguntar sobre los aspectos positivos de Japón.",
+        "audio_file": null
+    },
+    {
+        "id": 19,
+        "start": 78.62,
+        "end": 81.62,
+        "duration": 3.0,
+        "speaker": "UNKNOWN",
+        "original_text": "日本のいいところ、どんなところがいいところだと思いますか?",
+        "translated_text": "¿Qué considera usted que son las ventajas de Japón? ¿En qué aspectos cree que destaca este país?",
+        "audio_file": null
+    },
+    {
+        "id": 20,
+        "start": 81.62,
+        "end": 85.62,
+        "duration": 4.0,
+        "speaker": "UNKNOWN",
+        "original_text": "そうですね、やっぱ黒髪が似合う女性がいっぱいいるところだなっていう",
+        "translated_text": "Sí, es cierto… Hay un montón de mujeres a quienes realmente les queda bien el cabello negro.",
+        "audio_file": null
+    },
+    {
+        "id": 21,
+        "start": 85.62,
+        "end": 87.62,
+        "duration": 2.0,
+        "speaker": "SPEAKER_04",
+        "original_text": "黒髪の女性がタイプですか?",
+        "translated_text": "¿Le agradan las mujeres de cabello negro?",
+        "audio_file": null
+    },
+    {
+        "id": 22,
+        "start": 87.62,
+        "end": 92.62,
+        "duration": 5.0,
+        "speaker": "UNKNOWN",
+        "original_text": "はい、そうですね。ロングの黒髪の女性がやっぱり一番美人かなっていう感じですね。",
+        "translated_text": "Sí, eso es cierto. Creo que una mujer de cabello negro largo sigue siendo la más hermosa, sin duda.",
+        "audio_file": null
+    },
+    {
+        "id": 23,
+        "start": 92.62,
+        "end": 94.62,
+        "duration": 2.0,
+        "speaker": "UNKNOWN",
+        "original_text": "思いやりあるよね。",
+        "translated_text": "Es muy considerado, ¿verdad?",
+        "audio_file": null
+    },
+    {
+        "id": 24,
+        "start": 94.62,
+        "end": 97.62,
+        "duration": 3.0,
+        "speaker": "UNKNOWN",
+        "original_text": "素敵。",
+        "translated_text": "Es hermoso.",
+        "audio_file": null
+    },
+    {
+        "id": 25,
+        "start": 97.62,
+        "end": 99.62,
+        "duration": 2.0,
+        "speaker": "SPEAKER_04",
+        "original_text": "やっぱり普段生活してても感じる?",
+        "translated_text": "¿De verdad se siente incluso en la vida cotidiana?",
+        "audio_file": null
+    },
+    {
+        "id": 26,
+        "start": 99.62,
+        "end": 103.62,
+        "duration": 4.0,
+        "speaker": "UNKNOWN",
+        "original_text": "優しい。なんか高齢者にすごい優しい。",
+        "translated_text": "Muy amable… De alguna manera, es especialmente atento con las personas de edad avanzada.",
+        "audio_file": null
+    },
+    {
+        "id": 27,
+        "start": 103.62,
+        "end": 105.62,
+        "duration": 2.0,
+        "speaker": "UNKNOWN",
+        "original_text": "思いやりの心とか。",
+        "translated_text": "Un corazón lleno de compasión, por ejemplo.",
+        "audio_file": null
+    },
+    {
+        "id": 28,
+        "start": 105.62,
+        "end": 107.62,
+        "duration": 2.0,
+        "speaker": "UNKNOWN",
+        "original_text": "思いやり。",
+        "translated_text": "Compasión.",
+        "audio_file": null
+    },
+    {
+        "id": 29,
+        "start": 107.62,
+        "end": 110.62,
+        "duration": 3.0,
+        "speaker": "SPEAKER_04",
+        "original_text": "ああ、いいです。これはこう、外国にも広めたい言葉ですよね。",
+        "translated_text": "Ah, sí, está bien. Se trata de una palabra que también me gustaría difundir en otros países, ¿verdad?",
+        "audio_file": null
+    },
+    {
+        "id": 30,
+        "start": 110.62,
+        "end": 114.62,
+        "duration": 4.0,
+        "speaker": "UNKNOWN",
+        "original_text": "そうだね。思いやりっていう言葉は何でも使えるんじゃないですか。",
+        "translated_text": "Sí, eso es cierto. La palabra “compasión” no se puede usar en cualquier contexto, ¿verdad?",
+        "audio_file": null
+    },
+    {
+        "id": 31,
+        "start": 114.62,
+        "end": 119.62,
+        "duration": 5.0,
+        "speaker": "SPEAKER_02",
+        "original_text": "例えば、食事しに行って残さないで食べてくる思いやりに一つですよ。",
+        "translated_text": "Por ejemplo, es una muestra de ese tipo de consideración: uno va a comer y se asegura de no dejar restos.",
+        "audio_file": null
+    },
+    {
+        "id": 32,
+        "start": 119.62,
+        "end": 121.62,
+        "duration": 2.0,
+        "speaker": "SPEAKER_02",
+        "original_text": "作った人への。",
+        "translated_text": "Dirigido a la persona que lo creó.",
+        "audio_file": null
+    },
+    {
+        "id": 33,
+        "start": 121.62,
+        "end": 124.62,
+        "duration": 3.0,
+        "speaker": "SPEAKER_02",
+        "original_text": "ね、人の気遣いをしてあげるの思いやり。",
+        "translated_text": "Sí, preocuparse por los demás es un acto de consideración y bondad.",
+        "audio_file": null
+    },
+    {
+        "id": 34,
+        "start": 124.62,
+        "end": 128.62,
+        "duration": 4.0,
+        "speaker": "UNKNOWN",
+        "original_text": "思いやりっていう言葉は何でも使えると思う。",
+        "translated_text": "Creo que la palabra “compasión” se puede utilizar en cualquier situación.",
+        "audio_file": null
+    },
+    {
+        "id": 35,
+        "start": 128.62,
+        "end": 130.62,
+        "duration": 2.0,
+        "speaker": "SPEAKER_04",
+        "original_text": "素敵ですね。",
+        "translated_text": "Es realmente hermoso.",
+        "audio_file": null
+    },
+    {
+        "id": 36,
+        "start": 130.62,
+        "end": 132.62,
+        "duration": 2.0,
+        "speaker": "SPEAKER_04",
+        "original_text": "ああ、そうなんだよ。",
+        "translated_text": "Ah, sí, es eso.",
+        "audio_file": null
+    },
+    {
+        "id": 37,
+        "start": 132.62,
+        "end": 134.62,
+        "duration": 2.0,
+        "speaker": "UNKNOWN",
+        "original_text": "何て言うんだろう。",
+        "translated_text": "¿Qué debería decir?",
+        "audio_file": null
+    },
+    {
+        "id": 38,
+        "start": 134.62,
+        "end": 139.62,
+        "duration": 5.0,
+        "speaker": "UNKNOWN",
+        "original_text": "わびさびっていうか、わびさびっていうのは人に対する思いやりとか、",
+        "translated_text": "Se podría decir que es una especie de melancolía… O más bien, se trata de un sentimiento de compasión hacia los demás.",
+        "audio_file": null
+    },
+    {
+        "id": 39,
+        "start": 139.62,
+        "end": 143.62,
+        "duration": 4.0,
+        "speaker": "UNKNOWN",
+        "original_text": "そういったものっていうのは言葉一つに人もそうだよね。",
+        "translated_text": "Esos tipos de cosas… se refieren a algo que puede ser expresado con una sola palabra; lo mismo ocurre con las personas, ¿verdad?",
+        "audio_file": null
+    },
+    {
+        "id": 40,
+        "start": 143.62,
+        "end": 148.62,
+        "duration": 5.0,
+        "speaker": "SPEAKER_01",
+        "original_text": "例えば雪が降るにしても、雪なんていうのは10種類ぐらい良い方があるでしょ。",
+        "translated_text": "Por ejemplo, incluso cuando nieva, existen alrededor de diez tipos diferentes de nieve, y cada uno de ellos es considerado “mejor” que los demás.",
+        "audio_file": null
+    },
+    {
+        "id": 41,
+        "start": 148.62,
+        "end": 152.62,
+        "duration": 4.0,
+        "speaker": "UNKNOWN",
+        "original_text": "ささめ雪とか、目、淡雪とか。",
+        "translated_text": "Nieve susurrante, nieve ligera… o simplemente nieve.",
+        "audio_file": null
+    },
+    {
+        "id": 42,
+        "start": 152.62,
+        "end": 157.62,
+        "duration": 5.0,
+        "speaker": "UNKNOWN",
+        "original_text": "やっぱりそういう表現が豊かっていうのは他の国にはないと思う。",
+        "translated_text": "Realmente creo que la riqueza de expresiones lingüísticas que se encuentran en este país no existe en otros.",
+        "audio_file": null
+    },
+    {
+        "id": 43,
+        "start": 158.62,
+        "end": 164.62,
+        "duration": 6.0,
+        "speaker": "UNKNOWN",
+        "original_text": "今日はみんなの日本の良いところとかあるかな、パッと出てくるものです。",
+        "translated_text": "Hoy, ¿a alguien se le ocurren algo bueno de Japón? Algo que venga a la mente de inmediato…",
+        "audio_file": null
+    },
+    {
+        "id": 44,
+        "start": 164.62,
+        "end": 170.3,
+        "duration": 5.68,
+        "speaker": "UNKNOWN",
+        "original_text": "アニメ。",
+        "translated_text": "Animación.",
+        "audio_file": null
+    },
+    {
+        "id": 45,
+        "start": 170.3,
+        "end": 172.3,
+        "duration": 2.0,
+        "speaker": "UNKNOWN",
+        "original_text": "アニメですかね。",
+        "translated_text": "¿Será un anime?",
+        "audio_file": null
+    },
+    {
+        "id": 46,
+        "start": 174.3,
+        "end": 177.3,
+        "duration": 3.0,
+        "speaker": "SPEAKER_04",
+        "original_text": "思い変わないな。アニメとか。",
+        "translated_text": "No cambies de opinión, ¿eh? Sobre los animes y cosas por el estilo…",
+        "audio_file": null
+    },
+    {
+        "id": 47,
+        "start": 177.3,
+        "end": 179.3,
+        "duration": 2.0,
+        "speaker": "SPEAKER_04",
+        "original_text": "ああ、アニメ好きですか?",
+        "translated_text": "Ah, ¿le gustan los anime?",
+        "audio_file": null
+    },
+    {
+        "id": 48,
+        "start": 179.3,
+        "end": 183.3,
+        "duration": 4.0,
+        "speaker": "SPEAKER_04",
+        "original_text": "あんまり他の国にはない。",
+        "translated_text": "No es algo que se encuentre con frecuencia en otros países.",
+        "audio_file": null
+    },
+    {
+        "id": 49,
+        "start": 184.3,
+        "end": 186.3,
+        "duration": 2.0,
+        "speaker": "SPEAKER_04",
+        "original_text": "アニメ文化。",
+        "translated_text": "Cultura de los anime.",
+        "audio_file": null
+    },
+    {
+        "id": 50,
+        "start": 186.3,
+        "end": 188.3,
+        "duration": 2.0,
+        "speaker": "SPEAKER_04",
+        "original_text": "どうですか?",
+        "translated_text": "¿Qué le parece?",
+        "audio_file": null
+    },
+    {
+        "id": 51,
+        "start": 188.3,
+        "end": 190.3,
+        "duration": 2.0,
+        "speaker": "SPEAKER_04",
+        "original_text": "例えば、どんなアニメ好きなんですか?",
+        "translated_text": "Por ejemplo, ¿qué tipo de anime le gusta?",
+        "audio_file": null
+    },
+    {
+        "id": 52,
+        "start": 191.3,
+        "end": 194.3,
+        "duration": 3.0,
+        "speaker": "UNKNOWN",
+        "original_text": "ドラゴンボールとかドラゴンボール。",
+        "translated_text": "Dragon Ball, Dragon Ball…",
+        "audio_file": null
+    },
+    {
+        "id": 53,
+        "start": 194.3,
+        "end": 196.3,
+        "duration": 2.0,
+        "speaker": "UNKNOWN",
+        "original_text": "ドラゴンボール。",
+        "translated_text": "Dragon Ball.",
+        "audio_file": null
+    },
+    {
+        "id": 54,
+        "start": 196.3,
+        "end": 198.3,
+        "duration": 2.0,
+        "speaker": "UNKNOWN",
+        "original_text": "ドラゴンボールとか。",
+        "translated_text": "Como Dragon Ball, por ejemplo.",
+        "audio_file": null
+    },
+    {
+        "id": 55,
+        "start": 198.3,
+        "end": 201.3,
+        "duration": 3.0,
+        "speaker": "UNKNOWN",
+        "original_text": "ちなみに今日僕たちはプリキュアを意識してる。",
+        "translated_text": "Por cierto, hoy estamos prestando atención a las Princesas Rescate.",
+        "audio_file": null
+    },
+    {
+        "id": 56,
+        "start": 201.3,
+        "end": 204.3,
+        "duration": 3.0,
+        "speaker": "UNKNOWN",
+        "original_text": "プリキュアを意識してる?",
+        "translated_text": "¿Estás pensando en las Princesas Rescate?",
+        "audio_file": null
+    },
+    {
+        "id": 57,
+        "start": 204.3,
+        "end": 207.3,
+        "duration": 3.0,
+        "speaker": "UNKNOWN",
+        "original_text": "こうやってね、こうやってね。",
+        "translated_text": "Así es, así se hace.",
+        "audio_file": null
+    },
+    {
+        "id": 58,
+        "start": 209.3,
+        "end": 212.3,
+        "duration": 3.0,
+        "speaker": "SPEAKER_04",
+        "original_text": "排球とか、クロマスとか。",
+        "translated_text": "Voleibol, cromas…",
+        "audio_file": null
+    },
+    {
+        "id": 59,
+        "start": 212.3,
+        "end": 214.3,
+        "duration": 2.0,
+        "speaker": "SPEAKER_04",
+        "original_text": "最近のアニメ。",
+        "translated_text": "Animes recientes.",
+        "audio_file": null
+    },
+    {
+        "id": 60,
+        "start": 214.3,
+        "end": 216.3,
+        "duration": 2.0,
+        "speaker": "SPEAKER_04",
+        "original_text": "オタキなんだ。",
+        "translated_text": "Es un otaki.",
+        "audio_file": null
+    },
+    {
+        "id": 61,
+        "start": 216.3,
+        "end": 219.3,
+        "duration": 3.0,
+        "speaker": "UNKNOWN",
+        "original_text": "僕に暮らしててあ、良くないなとか。",
+        "translated_text": "Que no es bueno vivir conmigo, o algo por el estilo.",
+        "audio_file": null
+    },
+    {
+        "id": 62,
+        "start": 219.3,
+        "end": 222.3,
+        "duration": 3.0,
+        "speaker": "SPEAKER_04",
+        "original_text": "ここも好きじゃないなと思う日本のところってある?",
+        "translated_text": "¿Hay algún lugar en Japón que tampoco te guste?",
+        "audio_file": null
+    },
+    {
+        "id": 63,
+        "start": 222.3,
+        "end": 225.3,
+        "duration": 3.0,
+        "speaker": "UNKNOWN",
+        "original_text": "嫌い?嫌いなところって。",
+        "translated_text": "¿No te gusta? ¿Qué es lo que no te gusta?",
+        "audio_file": null
+    },
+    {
+        "id": 64,
+        "start": 225.3,
+        "end": 226.3,
+        "duration": 1.0,
+        "speaker": "UNKNOWN",
+        "original_text": "ある?",
+        "translated_text": "¿Alguna?",
+        "audio_file": null
+    },
+    {
+        "id": 65,
+        "start": 226.3,
+        "end": 228.3,
+        "duration": 2.0,
+        "speaker": "UNKNOWN",
+        "original_text": "そうだね。あんまり。",
+        "translated_text": "Sí, la verdad es que no mucho.",
+        "audio_file": null
+    },
+    {
+        "id": 66,
+        "start": 230.3,
+        "end": 231.3,
+        "duration": 1.0,
+        "speaker": "SPEAKER_04",
+        "original_text": "なんだろう。",
+        "translated_text": "¿Qué será?",
+        "audio_file": null
+    },
+    {
+        "id": 67,
+        "start": 231.3,
+        "end": 233.3,
+        "duration": 2.0,
+        "speaker": "UNKNOWN",
+        "original_text": "携帯ばっかり見てる?",
+        "translated_text": "¿Solo miras tu teléfono móvil todo el tiempo?",
+        "audio_file": null
+    },
+    {
+        "id": 68,
+        "start": 233.3,
+        "end": 235.3,
+        "duration": 2.0,
+        "speaker": "SPEAKER_04",
+        "original_text": "歩き、歩き。",
+        "translated_text": "Caminando, caminando…",
+        "audio_file": null
+    },
+    {
+        "id": 69,
+        "start": 236.3,
+        "end": 239.3,
+        "duration": 3.0,
+        "speaker": "UNKNOWN",
+        "original_text": "言語は乱れてるよね、最近。",
+        "translated_text": "El lenguaje está un poco desordenado, ¿verdad? Últimamente…",
+        "audio_file": null
+    },
+    {
+        "id": 70,
+        "start": 239.3,
+        "end": 242.3,
+        "duration": 3.0,
+        "speaker": "UNKNOWN",
+        "original_text": "昔、我々若い時がやばいとか、",
+        "translated_text": "En el pasado, cuando éramos jóvenes, las cosas eran realmente difíciles…",
+        "audio_file": null
+    },
+    {
+        "id": 71,
+        "start": 242.3,
+        "end": 245.3,
+        "duration": 3.0,
+        "speaker": "UNKNOWN",
+        "original_text": "そういうのは役座の使う言葉だったんだよ。",
+        "translated_text": "Ese tipo de expresiones eran palabras que se utilizaban dentro del contexto de los roles específicos que cada persona desempeñaba.",
+        "audio_file": null
+    },
+    {
+        "id": 72,
+        "start": 246.3,
+        "end": 249.3,
+        "duration": 3.0,
+        "speaker": "UNKNOWN",
+        "original_text": "だからそれが変化していった、",
+        "translated_text": "Por eso, ese aspecto fue cambiando con el tiempo.",
+        "audio_file": null
+    },
+    {
+        "id": 73,
+        "start": 249.3,
+        "end": 251.3,
+        "duration": 2.0,
+        "speaker": "UNKNOWN",
+        "original_text": "例えば入れ済み。",
+        "translated_text": "Por ejemplo, ya está colocado dentro.",
+        "audio_file": null
+    },
+    {
+        "id": 74,
+        "start": 251.3,
+        "end": 254.3,
+        "duration": 3.0,
+        "speaker": "UNKNOWN",
+        "original_text": "たとえ、全然違うのよ。",
+        "translated_text": "Aunque, en realidad, son completamente diferentes.",
+        "audio_file": null
+    },
+    {
+        "id": 75,
+        "start": 254.3,
+        "end": 256.3,
+        "duration": 2.0,
+        "speaker": "UNKNOWN",
+        "original_text": "入れ済みってのは、",
+        "translated_text": "Lo que significa “ya incluido” es que…",
+        "audio_file": null
+    },
+    {
+        "id": 76,
+        "start": 257.3,
+        "end": 260.3,
+        "duration": 3.0,
+        "speaker": "UNKNOWN",
+        "original_text": "有る、積みを動かせば入れていったの。",
+        "translated_text": "Sí, se podía introducir moviendo los bloques correspondientes.",
+        "audio_file": null
+    },
+    {
+        "id": 77,
+        "start": 260.3,
+        "end": 262.3,
+        "duration": 2.0,
+        "speaker": "SPEAKER_01",
+        "original_text": "関在者の明かしていったの。",
+        "translated_text": "Las personas involucradas lo revelaron uno por uno.",
+        "audio_file": null
+    },
+    {
+        "id": 78,
+        "start": 262.3,
+        "end": 263.3,
+        "duration": 1.0,
+        "speaker": "UNKNOWN",
+        "original_text": "ごめんなさい。",
+        "translated_text": "Lo siento mucho.",
+        "audio_file": null
+    },
+    {
+        "id": 79,
+        "start": 263.3,
+        "end": 265.3,
+        "duration": 2.0,
+        "speaker": "SPEAKER_04",
+        "original_text": "何言ったらいいのかわからないんだけど。",
+        "translated_text": "No sé qué decir…",
+        "audio_file": null
+    },
+    {
+        "id": 80,
+        "start": 265.3,
+        "end": 267.3,
+        "duration": 2.0,
+        "speaker": "UNKNOWN",
+        "original_text": "完璧でした。",
+        "translated_text": "Fue perfecto.",
+        "audio_file": null
+    },
+    {
+        "id": 81,
+        "start": 267.3,
+        "end": 268.3,
+        "duration": 1.0,
+        "speaker": "UNKNOWN",
+        "original_text": "やったー。",
+        "translated_text": "¡Lo logré!",
+        "audio_file": null
+    },
+    {
+        "id": 82,
+        "start": 268.3,
+        "end": 269.3,
+        "duration": 1.0,
+        "speaker": "UNKNOWN",
+        "original_text": "ありがとうございました。",
+        "translated_text": "Muchas gracias.",
+        "audio_file": null
+    },
+    {
+        "id": 83,
+        "start": 269.3,
+        "end": 271.3,
+        "duration": 2.0,
+        "speaker": "SPEAKER_04",
+        "original_text": "はい、どうもごちそうさまでした。",
+        "translated_text": "Sí, muchas gracias por su compañía.",
+        "audio_file": null
+    }
+]

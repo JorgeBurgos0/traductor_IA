@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "start": 0.0,
+        "end": 5.0,
+        "duration": 5.0,
+        "speaker": "UNKNOWN",
+        "original_text": "Creating Game Animation's sprite sheets with AI is way easier than you think.",
+        "translated_text": "Crear sprites para animaciones en juegos con IA es mucho más fácil de lo que piensas.",
+        "audio_file": null
+    },
+    {
+        "id": 2,
+        "start": 5.0,
+        "end": 9.0,
+        "duration": 4.0,
+        "speaker": "UNKNOWN",
+        "original_text": "This character was made with AI and stays fully consistent.",
+        "translated_text": "Este personaje fue creado con IA y se mantiene completamente coherente.",
+        "audio_file": null
+    },
+    {
+        "id": 3,
+        "start": 9.0,
+        "end": 15.0,
+        "duration": 6.0,
+        "speaker": "UNKNOWN",
+        "original_text": "Same character, tons of animations, all game ready, perfect for 2D games.",
+        "translated_text": "Mismo personaje, mucha animación, listo para todo el juego, ideal para juegos 2D.",
+        "audio_file": null
+    },
+    {
+        "id": 4,
+        "start": 15.0,
+        "end": 18.0,
+        "duration": 3.0,
+        "speaker": "SPEAKER_00",
+        "original_text": "Yes, this is a free AI tool.",
+        "translated_text": "Sí, esto es una herramienta de IA gratuita.",
+        "audio_file": null
+    },
+    {
+        "id": 5,
+        "start": 18.0,
+        "end": 23.0,
+        "duration": 5.0,
+        "speaker": "SPEAKER_00",
+        "original_text": "I'll show you exactly how to create animation sprite sheets step by step.",
+        "translated_text": "Te mostraré exactamente cómo crear hojas de sprites animados paso a paso.",
+        "audio_file": null
+    },
+    {
+        "id": 6,
+        "start": 23.0,
+        "end": 28.0,
+        "duration": 5.0,
+        "speaker": "UNKNOWN",
+        "original_text": "The full tutorial is coming very soon, so hit follow and don't miss it.",
+        "translated_text": "El tutorial completo saldrá muy pronto, así que sígueme y no te lo pierdas.",
+        "audio_file": null
+    }
+]

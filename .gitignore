@@ -1,0 +1,54 @@
+# Entornos Virtuales
+venv/
+env/
+.venv/
+.env_folder/
+
+# Caché de Python y Compilados
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Variables de Entorno y Secretos (¡CRÍTICO!)
+.env
+.env.*
+secrets.json
+keys.json
+
+# Modelos de IA (Pesos y Binarios)
+*.pt
+*.bin
+*.safetensors
+*.onnx
+*.tflite
+models/
+weights/
+*.gguf
+
+# Archivos Multimedia Pesados (Videos, Audios)
+*.mp4
+*.mkv
+*.avi
+*.mov
+*.mp3
+*.wav
+*.ogg
+*.flac
+
+# Carpetas de Salida y Temporales
+output/
+temp/
+tmp/
+*.tmp
+
+# Logs e Historiales
+*.log
+
+# Configuración de Editores (VS Code, PyCharm)
+.vscode/
+.idea/
+
+# Archivos del Sistema Operativo generados
+.DS_Store
+Thumbs.db
