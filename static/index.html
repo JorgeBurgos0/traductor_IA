@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <span class="mic-icon" style="font-size: 2.2rem; filter: hue-rotate(250deg) saturate(3);">🎙️</span>
+        <span class="mic-icon" style="font-size: 2.2rem; filter: hue-rotate(250deg) saturate(3);"></span>
         <div>
             <h1>Doblador IA</h1>
             <p>Dashboard de Traducción y Doblaje Automático</p>
@@ -19,7 +19,7 @@
     <div class="dashboard-grid">
         <!-- Panel 1: Archivos / Preview Video -->
         <div class="panel p-archivos" style="grid-column: 1; grid-row: 1;">
-            <h2>🎬 Video Seleccionado</h2>
+            <h2>Video Seleccionado</h2>
             <div id="video-container" class="video-container empty">
                 <span id="video-placeholder">No hay video cargado</span>
                 <video id="video-preview" controls crossorigin="anonymous"></video>
@@ -31,7 +31,7 @@
 
         <!-- Panel 2: Subir / Origen (COMPACT) -->
         <div class="panel p-subir" style="grid-column: 1; grid-row: 2;">
-            <h2>📥 Origen del Video</h2>
+            <h2>Origen del Video</h2>
             
             <div class="tabs">
                 <button class="tab-btn active" onclick="switchTab('local')" style="padding: 0.25rem 0.5rem; font-size: 0.8rem;">Local</button>
@@ -54,7 +54,7 @@
                     <option value="ja">JA</option>
                     <option value="zh">ZH</option>
                 </select>
-                <span style="color:var(--text-muted)">➡️</span>
+                <span style="color:var(--text-muted)">-&gt;</span>
                 <select id="target-lang" style="padding: 0.5rem; font-size: 0.85rem;">
                     <option value="es" selected>ES</option>
                     <option value="en">EN</option>
@@ -66,7 +66,7 @@
 
         <!-- Panel 3: Acciones -->
         <div class="panel p-acciones" style="grid-column: 1; grid-row: 3;">
-            <h2>⚙️ Pipeline</h2>
+            <h2>Pipeline de Procesado</h2>
             <div class="workflow-steps">
                 <div class="step disabled" id="step-transcribe">
                     <button id="btn-transcribe" class="action-btn">1. Transcribir</button>
@@ -75,7 +75,7 @@
                     <button id="btn-translate" class="action-btn">2. Traducir Texto</button>
                 </div>
                 <div class="step disabled" id="step-audio">
-                    <label for="global-voice-select" style="font-size:0.78rem; color:#8b949e; margin-bottom:0.3rem; display:block;">🎙️ Voz por defecto:</label>
+                    <label for="global-voice-select" style="font-size:0.78rem; color:#8b949e; margin-bottom:0.3rem; display:block;">Voz por defecto:</label>
                     <select id="global-voice-select" style="width:100%; padding:0.4rem 0.5rem; font-size:0.82rem; margin-bottom:0.5rem; background:#0d1117; color:#c9d1d9; border:1px solid #30363d; border-radius:6px;">
                         <option value="" disabled selected>-- Elige una voz --</option>
                         <!-- Se rellena dinámicamente -->
@@ -91,7 +91,7 @@
         <!-- Panel 4: Resultados / Tabla -->
         <div class="panel p-resultados" style="grid-column: 2; grid-row: 1 / span 3; display: flex; flex-direction: column;">
             <div class="resultados-header">
-                <h2>📝 Editor Multilinea</h2>
+                <h2>Editor Multilínea</h2>
                 <button id="btn-save-data" class="action-btn outline-btn hidden">Guardar Todo</button>
             </div>
             

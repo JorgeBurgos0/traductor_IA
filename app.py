@@ -44,7 +44,7 @@ async def upload_video(background_tasks: BackgroundTasks, file: UploadFile = Fil
     try:
         pipe.free_gpu()
         pipe.extract_audio()
-        pipe.separate_audio() # this runs demucs
+        pipe.separate_audio()
         update_status(project_id, "idle")
     except Exception as e:
         update_status(project_id, f"error: {str(e)}")
@@ -76,7 +76,7 @@ async def download_youtube_video(background_tasks: BackgroundTasks, url: str = F
         if not os.path.exists(pipe.audio_track_orig):
             pipe.extract_audio()
         if not os.path.exists(pipe.no_vocals_track):
-            pipe.separate_audio() # this runs demucs
+            pipe.separate_audio()
         update_status(project_id, "idle")
     except Exception as e:
         update_status(project_id, f"error: {str(e)}")
@@ -132,13 +132,11 @@ def process_generate_audio(project_id, item_id=None, voice_override=None):
         with open(pipe.json_path, "r", encoding="utf-8") as f:
             data = json.load(f)
         
-        # Si se recibe una voz explícita, sobreescribir en TODOS los segmentos a procesar
         if voice_override:
-            print(f"[VOICE-OVERRIDE] Aplicando voz '{voice_override}' a {'segmento ' + str(item_id) if item_id else 'todos los segmentos'}")
+            print(f"[INFO] Aplicando voz '{voice_override}' a {'segmento ' + str(item_id) if item_id else 'todos los segmentos'}")
             for item in data:
                 if item_id is None or item["id"] == item_id:
                     item["voice"] = voice_override
-            # Guardar la sobreescritura en disco también
             pipe.save_json(data)
         
         updated_data = pipe.generate_voice_segments(data, item_id=item_id)

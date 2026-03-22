@@ -16,7 +16,7 @@ class VideoTranslatorPipeline:
 
         self.video_path = video_path
         self.target_language = target_language
-        self.source_language = source_language  # None = Whisper autodetecta
+        self.source_language = source_language  # None activa autodección en Whisper.
         self.base_name = os.path.splitext(video_path)[0]
 
         self.audio_track_orig = f"{self.base_name}_original_track.wav"
@@ -54,7 +54,7 @@ class VideoTranslatorPipeline:
 
     def run_pipeline(self):
 
-        print(" INICIANDO PIPELINE")
+        print("Iniciando pipeline...")
 
         self.free_gpu()
 
@@ -82,7 +82,7 @@ class VideoTranslatorPipeline:
 
         self.assemble_final_video(pipeline_data)
 
-        print(" Proceso finalizado")
+        print("Proceso finalizado.")
 
     # -------------------------------------------------
 
@@ -116,7 +116,7 @@ class VideoTranslatorPipeline:
 
         from faster_whisper import WhisperModel
 
-        # Intentar en GPU, caer a CPU si no hay VRAM
+        # Intento de carga en GPU, con fallback a CPU si falta VRAM.
         try:
             model = WhisperModel(
                 "small",
@@ -142,7 +142,7 @@ class VideoTranslatorPipeline:
             self.audio_track_orig,
             beam_size=5,
             vad_filter=True,
-            language=self.source_language  # None = autodetectar
+            language=self.source_language  # None activa autodetectado
         )
 
         data = []
@@ -176,7 +176,7 @@ class VideoTranslatorPipeline:
         import os
         hf_token = os.environ.get("HF_TOKEN", None)
         try:
-            # Intentar cargar desde caché local (modelos ya descargados)
+            # Carga desde caché local si los modelos están descargados
             pipeline = Pipeline.from_pretrained(
                 "pyannote/speaker-diarization-3.1",
                 token=hf_token
@@ -248,7 +248,7 @@ class VideoTranslatorPipeline:
         tgt_en = lang_names_en.get(self.target_language, "Spanish")
         tgt_zh = lang_names_zh.get(self.target_language, "西班牙语")
         
-        # Check if Chinese is involved
+        # Verificación de idioma chino
         is_zh = getattr(self, "source_language", None) == "zh" or self.target_language == "zh"
         
         if is_zh:
@@ -280,17 +280,17 @@ class VideoTranslatorPipeline:
     # -------------------------------------------------
 
     def _clean_translation(self, raw, original_prompt=None):
-        """Elimina preámbulos, reglas, notas y cualquier basura que el modelo añada."""
+        """Elimina texto adicional o reglas incluidas por el modelo."""
 
         text = raw.strip()
 
-        # Patrones de frases introductoras comunes del modelo
+        # Patrones de frases introductorias
         intro_patterns = [
             r"(?i)^(claro[,.]?|por supuesto[,.]?|aquí tienes[:]?|here(?:'s| is)[:]?|sure[,.]?|of course[,.]?|la traducción[:]?|traducción[:]?)\s*\n+",
             r"(?i)^(claro[,.]?|por supuesto[,.]?|aquí tienes[:]?|here(?:'s| is)[:]?|sure[,.]?|of course[,.]?|la traducción[:]?|traducción[:]?)\s+",
         ]
 
-        # Patrones de reglas / instrucciones regurgitadas
+        # Patrones de instrucciones reflejadas por el modelo
         rule_patterns = [
             r"(?i)(translate\s+to\s+\w+\.?\s*output\s+only.*?:\s*\n*)",
             r"(?i)(output\s+only\s+the\s+translation.*?:\s*\n*)",
@@ -301,7 +301,7 @@ class VideoTranslatorPipeline:
             r"(?i)(注意只需要输出翻译后的结果.*?(\n|$))",
         ]
 
-        # Notas y aclaraciones al final
+        # Notas al final del texto
         suffix_patterns = [
             r"(?i)\n+(note|nota)[:\s].*$",
             r"(?i)\n+\(.*?(nota|note|traducción|translation).*?\)",
@@ -312,7 +312,7 @@ class VideoTranslatorPipeline:
         for pattern in intro_patterns + rule_patterns + suffix_patterns:
             result = re.sub(pattern, "", result, flags=re.MULTILINE | re.DOTALL)
 
-        # Si el modelo coló el texto original seguido de la traducción, quedarse solo con la última parte
+        # Extrae la traducción omitiendo el texto original si fue incluido
         lines = [l.strip() for l in result.strip().splitlines() if l.strip()]
         if lines:
             result = " ".join(lines)
@@ -322,17 +322,17 @@ class VideoTranslatorPipeline:
     # -------------------------------------------------
 
     def _normalize_numbers(self, text):
-        """Reemplaza los números en formato dígito por su escritura, útil para Kokoro"""
+        """Convierte números a texto para la síntesis de voz."""
         
         def replace_num(match):
             num_str = match.group(0).replace(",", "").replace(".", "")
             try:
-                # Convertir a texto en español
+                # Conversión a texto en español
                 return num2words(int(num_str), lang='es')
             except ValueError:
                 return match.group(0)
 
-        # Buscar números enteros solos o con formato de miles (8,000 / 8000 / 8.000)
+        # Búsqueda de números enteros y formatos de miles
         return re.sub(r'\b\d{1,3}([,.]?\d{3})*\b', replace_num, text)
 
     # -------------------------------------------------
@@ -341,14 +341,14 @@ class VideoTranslatorPipeline:
 
         print("Generando TTS...")
 
-        # Liberar agresivamente antes de cargar Kokoro
+        # Liberación de memoria previa a la carga de Kokoro
         self.free_gpu()
 
         from kokoro import KPipeline
         import soundfile as sf
         import numpy as np
 
-        # Intentar en GPU; si no hay VRAM suficiente, caer a CPU
+        # Fallback a CPU en caso de memoria VRAM insuficiente
         device = 'cuda'
         
         pipelines = {}
@@ -378,15 +378,14 @@ class VideoTranslatorPipeline:
             if not text:
                 continue
 
-            # Kokoro lee los números dígito a dígito (ej: 8000 -> 8 0 0 0)
-            # Normalizamos convirtiéndolos en texto
+            # Normalización de números para síntesis en Kokoro
             text_for_tts = self._normalize_numbers(text)
 
             voice = item.get("voice", "ef_dora")
             if not voice:
                 voice = "ef_dora"
             
-            # ¡CRÍTICO! Guardar la voz de vuelta en el objeto para que persista en el JSON
+            # Persistencia de la voz seleccionada en el objeto
             item["voice"] = voice
 
             print(f"[DEBUG-VOICE] Segmento {item['id']} ha solicitado explícitamente la voz: {voice}")
@@ -453,7 +452,7 @@ class VideoTranslatorPipeline:
             if result.returncode == 0:
                 print(f"[ENCODER] Usando encoder de video: {name}")
                 return flags
-        # Último recurso: copia sin re-encoding (puede no funcionar con setpts)
+        # Fallback a copia sin re-encoding
         print("[ENCODER] Ningún encoder encontrado, intentando copy...")
         return ["-c:v", "copy"]
 
@@ -461,14 +460,14 @@ class VideoTranslatorPipeline:
 
     def assemble_final_video(self, data):
         """
-        Ensamblado con sincronía híbrida (Capa 1 + Capa 2):
-        - Capa 1: Acelera audio hasta 1.25x si excede el slot original.
-        - Capa 2: Si el audio acelerado sigue excediendo el slot, estira el segmento de video para que encaje.
-        - Requiere libx264 (instalado en el sistema vía RPM Fusion).
+        Ensamblado con sincronía híbrida:
+        1. Aceleración de audio (hasta 1.25x) si excede la duración original.
+        2. Ajuste de segmento de video si la aceleración de audio no es suficiente.
+        Requiere libx264.
         """
         print("Ensamblando video con sincronía híbrida...")
 
-        ATEMPO_THRESHOLD = 1.25   # Capa 1: acelerar audio hasta aquí
+        ATEMPO_THRESHOLD = 1.25
 
         valid = sorted(
             [x for x in data if x.get("audio_file") and os.path.exists(x["audio_file"])],
@@ -478,7 +477,7 @@ class VideoTranslatorPipeline:
         if not valid:
             raise RuntimeError("No hay segmentos de audio válidos para ensamblar.")
 
-        # Fondo musical
+        # Procesamiento de pista de fondo
         bg_path = os.path.abspath(self.no_vocals_track)
         has_bg = os.path.exists(bg_path)
         if has_bg:
@@ -486,22 +485,22 @@ class VideoTranslatorPipeline:
         else:
             print("[BG] No se encontró pista de fondo.")
 
-        # Duración total del video original
+        # Cálculo de la duración total del video
         try:
             video_total_dur = self._get_video_duration()
         except Exception:
             video_total_dur = valid[-1]["end"] + 2.0
 
         # ------------------------------------------------------------------
-        # Fase 1: Calcular nuevo timeline
+        # Fase 1: Cálculo de nueva línea de tiempo
         # ------------------------------------------------------------------
         # video_segs: list of (v_start, v_end, stretch_factor)
         # audio_segs: list of (audio_file, atempo, new_delay_seconds)
 
         video_segs = []
         audio_segs = []
-        new_cursor = 0.0   # Cursor en la nueva línea de tiempo
-        prev_v_end = 0.0   # Cursor en el video original
+        new_cursor = 0.0
+        prev_v_end = 0.0
 
         for item in valid:
             v_start = float(item["start"])
@@ -513,22 +512,22 @@ class VideoTranslatorPipeline:
             audio_dur = float(item.get("audio_duration", slot))
             ratio = audio_dur / slot
 
-            # --- Gap antes de este segmento (sin audio, video a velocidad normal) ---
+            # Gap previo al segmento
             if v_start > prev_v_end + 0.01:
                 gap = v_start - prev_v_end
                 video_segs.append((prev_v_end, v_start, 1.0))
                 new_cursor += gap
 
-            # --- Capa 1: diferencia ≤ 25% → solo acelerar el audio ---
+            # Capa 1: Ajuste de velocidad del audio
             if ratio <= ATEMPO_THRESHOLD:
                 atempo      = float(max(1.0, round(ratio, 4)))
                 v_stretch   = 1.0
-                effective_a = audio_dur / atempo   # duración real tras atempo
+                effective_a = audio_dur / atempo
             else:
-                # --- Capa 2: diferencia > 25% → atempo 1.25x + video stretch ---
+                # Capa 2: Estiramiento de video
                 atempo    = ATEMPO_THRESHOLD
-                effective_a = audio_dur / atempo   # duración tras atempo al máx
-                v_stretch = effective_a / slot       # cuánto estirar el video
+                effective_a = audio_dur / atempo
+                v_stretch = effective_a / slot
                 print(f"  Seg {item['id']}: ratio={ratio:.2f}x → atempo={atempo}x, "
                       f"video_stretch={v_stretch:.2f}x")
 
@@ -538,12 +537,12 @@ class VideoTranslatorPipeline:
             new_cursor += effective_a
             prev_v_end = v_end
 
-        # Gap final del video
+        # Manejo de gap final
         if prev_v_end < video_total_dur - 0.01:
             video_segs.append((prev_v_end, video_total_dur, 1.0))
 
         # ------------------------------------------------------------------
-        # Fase 2: Codificar cada segmento de video y unir con audio
+        # Fase 2: Codificación y ensamblado de video y audio
         # ------------------------------------------------------------------
         import tempfile, shutil
 
@@ -551,7 +550,7 @@ class VideoTranslatorPipeline:
         seg_files = []
 
         try:
-            # Paso A: Codificar cada segmento de video en archivo temporal .ts
+            # Paso A: Codificación de segmentos de video a temporales
             for i, (vs, ve, stretch) in enumerate(video_segs):
                 tmp_out = os.path.join(tmp_dir, f"vseg_{i:03d}.ts")
                 seg_cmd = [
@@ -572,8 +571,7 @@ class VideoTranslatorPipeline:
                     raise subprocess.CalledProcessError(res.returncode, seg_cmd, res.stderr)
                 seg_files.append(tmp_out)
 
-            # Paso B: Unir los segmentos de video de forma secuencial
-            # (El demuxer consume muchísima menos RAM que el filtro concat porque procesa 1 archivo a la vez)
+            # Paso B: Unión secuencial de segmentos de video
             concat_list = os.path.join(tmp_dir, "concat.txt")
             with open(concat_list, "w") as f:
                 for sf in seg_files:
@@ -584,7 +582,7 @@ class VideoTranslatorPipeline:
                 "ffmpeg",
                 "-f", "concat", "-safe", "0",
                 "-i", concat_list,
-                "-c:v", "libx264", "-preset", "fast", "-crf", "23", # Re-encode para asegurar timestamps
+                "-c:v", "libx264", "-preset", "fast", "-crf", "23",
                 "-an",
                 video_joined, "-y"
             ]
@@ -595,14 +593,14 @@ class VideoTranslatorPipeline:
                 print(f"[CONCAT] ERROR: {res.stderr[-2000:]}")
                 raise subprocess.CalledProcessError(res.returncode, join_cmd, res.stderr)
 
-            # Paso C: Montar el audio mezclado sobre el video ya ensamblado
+            # Paso C: Mezcla de audio final con video
             audio_inputs = []
             if has_bg:
                 audio_inputs += ["-i", bg_path]
             for af, _, _ in audio_segs:
                 audio_inputs += ["-i", af]
 
-            a_offset_local = 1  # [0]=video_joined, [1..]=audios
+            a_offset_local = 1
             if has_bg:
                 a_offset_local = 2
 
@@ -694,7 +692,7 @@ if __name__ == "__main__":
     video = args.video
     source_lang = args.source
 
-    # Si no se pasó argumento de video, mostrar menú interactivo
+    # Mostrar menú interactivo si no se provee argumento de video
     if not video:
 
         videos = sorted([
@@ -720,7 +718,7 @@ if __name__ == "__main__":
             except ValueError:
                 print("Escribe un número válido.")
 
-    # Si no se pasó --source, preguntar el idioma fuente
+    # Solicitar el idioma de origen si no se proporciona
     if source_lang is None:
 
         print("\n Idioma del video original:")

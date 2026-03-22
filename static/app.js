@@ -35,7 +35,7 @@ async function pollStatus() {
             const baseName = projectId.substring(0, projectId.lastIndexOf('.')) || projectId;
             const videoUrl = `/uploads/${baseName}_DOBLADO.mp4`;
 
-            statusPanel.innerHTML = `✅ ¡Video Ensamblado! <a href="${videoUrl}" target="_blank" style="color:#58a6ff;">Ver HD</a>`;
+            statusPanel.innerHTML = `Video ensamblado exitosamente. <a href="${videoUrl}" target="_blank" style="color:#58a6ff;">Ver HD</a>`;
 
             videoPreview.src = videoUrl;
             videoContainer.classList.remove('empty');
@@ -79,7 +79,7 @@ function lockSteps() {
 
 async function loadData() {
     if (!projectId) return;
-    // Evitar que el navegador devuelva el JSON viejo de la cache
+    // Prevención de caché para carga de JSON
     const res = await fetch(`/api/data/${projectId}?t=${new Date().getTime()}`);
     currentData = await res.json();
 
@@ -91,78 +91,78 @@ async function loadData() {
 
 const voiceOptions = [
     // Español (Latino / España)
-    { id: 'ef_dora', name: '🇪🇸 Dora (Mujer)' },
-    { id: 'em_alex', name: '🇪🇸 Alex (Hombre)' },
-    { id: 'em_santa', name: '🇪🇸 Santa (Hombre)' },
+    { id: 'ef_dora', name: 'ES Dora (Mujer)' },
+    { id: 'em_alex', name: 'ES Alex (Hombre)' },
+    { id: 'em_santa', name: 'ES Santa (Hombre)' },
 
     // Inglés USA
-    { id: 'af_heart', name: '🇺🇸 Heart (Mujer)' },
-    { id: 'af_alloy', name: '🇺🇸 Alloy (Mujer)' },
-    { id: 'af_aoede', name: '🇺🇸 Aoede (Mujer)' },
-    { id: 'af_bella', name: '🇺🇸 Bella (Mujer)' },
-    { id: 'af_jessica', name: '🇺🇸 Jessica (Mujer)' },
-    { id: 'af_kore', name: '🇺🇸 Kore (Mujer)' },
-    { id: 'af_nicole', name: '🇺🇸 Nicole (Mujer)' },
-    { id: 'af_nova', name: '🇺🇸 Nova (Mujer)' },
-    { id: 'af_river', name: '🇺🇸 River (Mujer)' },
-    { id: 'af_sarah', name: '🇺🇸 Sarah (Mujer)' },
-    { id: 'af_sky', name: '🇺🇸 Sky (Mujer)' },
-    { id: 'am_adam', name: '🇺🇸 Adam (Hombre)' },
-    { id: 'am_echo', name: '🇺🇸 Echo (Hombre)' },
-    { id: 'am_eric', name: '🇺🇸 Eric (Hombre)' },
-    { id: 'am_fenrir', name: '🇺🇸 Fenrir (Hombre)' },
-    { id: 'am_liam', name: '🇺🇸 Liam (Hombre)' },
-    { id: 'am_michael', name: '🇺🇸 Michael (Hombre)' },
-    { id: 'am_onyx', name: '🇺🇸 Onyx (Hombre)' },
-    { id: 'am_puck', name: '🇺🇸 Puck (Hombre)' },
+    { id: 'af_heart', name: 'US Heart (Mujer)' },
+    { id: 'af_alloy', name: 'US Alloy (Mujer)' },
+    { id: 'af_aoede', name: 'US Aoede (Mujer)' },
+    { id: 'af_bella', name: 'US Bella (Mujer)' },
+    { id: 'af_jessica', name: 'US Jessica (Mujer)' },
+    { id: 'af_kore', name: 'US Kore (Mujer)' },
+    { id: 'af_nicole', name: 'US Nicole (Mujer)' },
+    { id: 'af_nova', name: 'US Nova (Mujer)' },
+    { id: 'af_river', name: 'US River (Mujer)' },
+    { id: 'af_sarah', name: 'US Sarah (Mujer)' },
+    { id: 'af_sky', name: 'US Sky (Mujer)' },
+    { id: 'am_adam', name: 'US Adam (Hombre)' },
+    { id: 'am_echo', name: 'US Echo (Hombre)' },
+    { id: 'am_eric', name: 'US Eric (Hombre)' },
+    { id: 'am_fenrir', name: 'US Fenrir (Hombre)' },
+    { id: 'am_liam', name: 'US Liam (Hombre)' },
+    { id: 'am_michael', name: 'US Michael (Hombre)' },
+    { id: 'am_onyx', name: 'US Onyx (Hombre)' },
+    { id: 'am_puck', name: 'US Puck (Hombre)' },
 
     // Inglés Británico
-    { id: 'bf_alice', name: '🇬🇧 Alice (Mujer)' },
-    { id: 'bf_emma', name: '🇬🇧 Emma (Mujer)' },
-    { id: 'bf_isabella', name: '🇬🇧 Isabella (Mujer)' },
-    { id: 'bf_lily', name: '🇬🇧 Lily (Mujer)' },
-    { id: 'bm_daniel', name: '🇬🇧 Daniel (Hombre)' },
-    { id: 'bm_fable', name: '🇬🇧 Fable (Hombre)' },
-    { id: 'bm_george', name: '🇬🇧 George (Hombre)' },
-    { id: 'bm_lewis', name: '🇬🇧 Lewis (Hombre)' },
+    { id: 'bf_alice', name: 'UK Alice (Mujer)' },
+    { id: 'bf_emma', name: 'UK Emma (Mujer)' },
+    { id: 'bf_isabella', name: 'UK Isabella (Mujer)' },
+    { id: 'bf_lily', name: 'UK Lily (Mujer)' },
+    { id: 'bm_daniel', name: 'UK Daniel (Hombre)' },
+    { id: 'bm_fable', name: 'UK Fable (Hombre)' },
+    { id: 'bm_george', name: 'UK George (Hombre)' },
+    { id: 'bm_lewis', name: 'UK Lewis (Hombre)' },
 
     // Japonés
-    { id: 'jf_alpha', name: '🇯🇵 Alpha (Mujer)' },
-    { id: 'jf_gongitsune', name: '🇯🇵 Gongitsune (Mujer)' },
-    { id: 'jf_nezumi', name: '🇯🇵 Nezumi (Mujer)' },
-    { id: 'jf_tebukuro', name: '🇯🇵 Tebukuro (Mujer)' },
-    { id: 'jm_kumo', name: '🇯🇵 Kumo (Hombre)' },
+    { id: 'jf_alpha', name: 'JA Alpha (Mujer)' },
+    { id: 'jf_gongitsune', name: 'JA Gongitsune (Mujer)' },
+    { id: 'jf_nezumi', name: 'JA Nezumi (Mujer)' },
+    { id: 'jf_tebukuro', name: 'JA Tebukuro (Mujer)' },
+    { id: 'jm_kumo', name: 'JA Kumo (Hombre)' },
 
     // Chino Mandarín
-    { id: 'zf_xiaobei', name: '🇨🇳 Xiaobei (Mujer)' },
-    { id: 'zf_xiaoni', name: '🇨🇳 Xiaoni (Mujer)' },
-    { id: 'zf_xiaoxiao', name: '🇨🇳 Xiaoxiao (Mujer)' },
-    { id: 'zf_xiaoyi', name: '🇨🇳 Xiaoyi (Mujer)' },
-    { id: 'zm_yunjian', name: '🇨🇳 Yunjian (Hombre)' },
-    { id: 'zm_yunxi', name: '🇨🇳 Yunxi (Hombre)' },
-    { id: 'zm_yunxia', name: '🇨🇳 Yunxia (Hombre)' },
-    { id: 'zm_yunyang', name: '🇨🇳 Yunyang (Hombre)' },
+    { id: 'zf_xiaobei', name: 'ZH Xiaobei (Mujer)' },
+    { id: 'zf_xiaoni', name: 'ZH Xiaoni (Mujer)' },
+    { id: 'zf_xiaoxiao', name: 'ZH Xiaoxiao (Mujer)' },
+    { id: 'zf_xiaoyi', name: 'ZH Xiaoyi (Mujer)' },
+    { id: 'zm_yunjian', name: 'ZH Yunjian (Hombre)' },
+    { id: 'zm_yunxi', name: 'ZH Yunxi (Hombre)' },
+    { id: 'zm_yunxia', name: 'ZH Yunxia (Hombre)' },
+    { id: 'zm_yunyang', name: 'ZH Yunyang (Hombre)' },
 
     // Francés
-    { id: 'ff_siwis', name: '🇫🇷 Siwis (Mujer)' },
+    { id: 'ff_siwis', name: 'FR Siwis (Mujer)' },
 
     // Hindi
-    { id: 'hf_alpha', name: '🇮🇳 Alpha (Mujer)' },
-    { id: 'hf_beta', name: '🇮🇳 Beta (Mujer)' },
-    { id: 'hm_omega', name: '🇮🇳 Omega (Hombre)' },
-    { id: 'hm_psi', name: '🇮🇳 Psi (Hombre)' },
+    { id: 'hf_alpha', name: 'HI Alpha (Mujer)' },
+    { id: 'hf_beta', name: 'HI Beta (Mujer)' },
+    { id: 'hm_omega', name: 'HI Omega (Hombre)' },
+    { id: 'hm_psi', name: 'HI Psi (Hombre)' },
 
     // Italiano
-    { id: 'if_sara', name: '🇮🇹 Sara (Mujer)' },
-    { id: 'im_nicola', name: '🇮🇹 Nicola (Hombre)' },
+    { id: 'if_sara', name: 'IT Sara (Mujer)' },
+    { id: 'im_nicola', name: 'IT Nicola (Hombre)' },
 
     // Portugués (Brasil)
-    { id: 'pf_dora', name: '🇧🇷 Dora (Mujer)' },
-    { id: 'pm_alex', name: '🇧🇷 Alex (Hombre)' },
-    { id: 'pm_santa', name: '🇧🇷 Santa (Hombre)' }
+    { id: 'pf_dora', name: 'PT Dora (Mujer)' },
+    { id: 'pm_alex', name: 'PT Alex (Hombre)' },
+    { id: 'pm_santa', name: 'PT Santa (Hombre)' }
 ];
 
-// Rellenar el selector global de voz del Pipeline
+// Inicialización de selector global de voces
 (function populateGlobalVoiceSelect() {
     const sel = document.getElementById('global-voice-select');
     if (!sel) return;
@@ -203,8 +203,8 @@ function renderTable() {
             // Evitar que el navegador reproduzca el WAV viejo (con la voz original de Dora) de la caché
             audioControls = `
                 <div class="audio-ctrl">
-                    <button class="audio-btn" title="Reproducir" onclick="playAudio('${url}?t=${new Date().getTime()}')">▶️</button>
-                    <button class="audio-btn outline-btn" title="Pausar" onclick="stopAudio()">⏸️</button>
+                    <button class="audio-btn" title="Reproducir" onclick="playAudio('${url}?t=${new Date().getTime()}')">▶</button>
+                    <button class="audio-btn outline-btn" title="Pausar" onclick="stopAudio()">⏸</button>
                     <button class="audio-btn outline-btn" title="Regenerar" onclick="regenAudio(${item.id})">↻</button>
                 </div>
             `;
@@ -229,7 +229,7 @@ function updateItem(index, key, value) {
     currentData[index][key] = value;
 }
 
-// Specifically updates voice in memory AND in DOM tracking
+// Actualización de voz en memoria y DOM
 function updateVoice(index, itemId, value) {
     currentData[index]['voice'] = value;
     console.log(`[VOICE] Segment ${itemId} voice set to: ${value}`);
@@ -257,18 +257,18 @@ async function regenAudio(itemId) {
     const rowVoice = rowSel ? rowSel.value : null;
 
     if (!rowVoice) {
-        alert(`Elige una voz en la fila del segmento ${itemId} antes de regenerar.`);
+        alert(`Seleccione una voz en la fila del segmento ${itemId} antes de regenerar.`);
         return;
     }
 
-    // Update in memory too
+    // Actualización local
     const item = currentData.find(d => d.id === itemId);
     if (item) item.voice = rowVoice;
 
     lockSteps();
     statusPanel.innerText = `Regenerando segmento ${itemId} con voz: ${rowVoice}...`;
 
-    // Guardar estado
+    // Persistencia de estado
     await fetch(`/api/data/${projectId}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
@@ -324,7 +324,7 @@ document.getElementById('btn-upload').addEventListener('click', async () => {
         }
 
         projectId = data.project_id;
-        statusPanel.innerText = data.status || "Video preparado";
+        statusPanel.innerText = data.status || "Video preparado.";
 
         videoPreview.src = `/uploads/${projectId}`;
         videoContainer.classList.remove('empty');
@@ -373,7 +373,7 @@ document.getElementById('btn-audio').addEventListener('click', async () => {
     lockSteps();
     statusPanel.innerText = `Generando voces con: ${globalVoice}...`;
 
-    // Pasar la voz directo en la URL - el backend la aplica a todos los segmentos
+    // Envío de la voz como parámetro URL
     await fetch(`/api/generate-audio/${projectId}?voice=${encodeURIComponent(globalVoice)}`, { method: 'POST' });
     startPolling();
 });
