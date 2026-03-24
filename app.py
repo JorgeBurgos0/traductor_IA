@@ -197,7 +197,26 @@ async def update_data(project_id: str, data: list = Body(...)):
     if project_id not in pipelines:
         return JSONResponse(status_code=404, content={"error": "Project not found"})
     pipe = pipelines[project_id]
-    pipe.save_json(data)
+
+    # Merge incoming edit data with existing JSON to preserve audio_file and audio_duration.
+    # Browser data only has text/voice edits — audio file paths are set by the Python backend.
+    existing = {}
+    if os.path.exists(pipe.json_path):
+        with open(pipe.json_path, "r", encoding="utf-8") as f:
+            for item in json.load(f):
+                existing[item["id"]] = item
+
+    merged = []
+    for item in data:
+        base = existing.get(item["id"], {})
+        merged_item = {**base, **item}
+        # Always restore backend-generated fields if browser sent null/empty
+        for field in ("audio_file", "audio_duration"):
+            if base.get(field) and not item.get(field):
+                merged_item[field] = base[field]
+        merged.append(merged_item)
+
+    pipe.save_json(merged)
     return {"message": "Data saved"}
 
 app.mount("/uploads", StaticFiles(directory="uploads"), name="uploads")
